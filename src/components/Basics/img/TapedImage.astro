@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+
+import Tape from "../../../img/img_assets/Tape.png";
+
+const { src, alt, style, size } = Astro.props;
+
+---
+
+<div class="container" style={size}>
+  <Image src={src} alt={alt} style={style} />
+  <Image src={Tape} class="tape a" alt="" />
+  <Image src={Tape} class="tape b" alt="" />
+</div>
+
+<style>
+  .container {
+    position: relative;
+    filter: var(--dropshadow);
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  img:nth-child(1) {
+    max-height: inherit;
+  }
+
+  .tape {
+    aspect-ratio: 1 / 1;
+    width: 80px;
+    position: absolute;
+  }
+
+  .tape.a {
+    top: -2rem;
+    right: -2rem;
+  }
+
+  .tape.b {
+    bottom: -2rem;
+    left: -2rem;
+  }
+
+  @media (min-width: 630px) {
+    .tape {
+      width: 150px;
+    }
+
+    .tape.a {
+    top: -3rem;
+    right: -3rem;
+  }
+
+  .tape.b {
+    bottom: -3rem;
+    left: -3rem;
+  }
+  }
+</style>

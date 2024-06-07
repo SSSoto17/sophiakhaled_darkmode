@@ -1,0 +1,41 @@
+---
+
+import { Image } from "astro:assets";
+
+const {img} = Astro.props
+
+---
+
+<ul class="gallery">
+    <li><Image src={img} alt="" class="active" inferSize /></li>
+    <li><Image src={img} alt="" inferSize /></li>
+    <li><Image src={img} alt="" inferSize /></li>
+    <li><Image src={img} alt="" inferSize /></li>
+</ul>
+
+<style>
+
+    ul {
+        height: 120px;
+        display: flex;
+        gap: var(--xx-small);
+    }
+
+    img {
+        background-color: var(--box-color);
+        padding: var(--small);
+        object-fit: scale-down;
+        height: 100%;
+        opacity: .5;
+        transition: opacity .15s ease-in-out;
+    }
+
+    img.active {
+        opacity: 1;
+    }
+
+    img:hover {
+        opacity: 1;
+    }
+
+</style>

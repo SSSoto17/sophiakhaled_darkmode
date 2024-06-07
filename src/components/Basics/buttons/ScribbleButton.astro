@@ -1,0 +1,82 @@
+---
+
+const {label, href} = Astro.props
+
+---
+<a href={href}>
+    <div class="container">
+        <img src="/buttons/btn_sparkle.svg" alt="" class="sparkle">
+        <div class="btn">
+            <img src="/buttons/btn_scribble.svg" alt="" class="scribble">
+            <p class="button">{label}</p>
+        </div>
+    </div>
+</a>
+
+
+<style>
+
+    a {
+        width: max-content;
+    }
+
+    a:hover {
+        opacity: 1;
+    }
+
+    .container {
+        position: relative;
+        aspect-ratio: 2/1;
+        max-width: 283px;
+        min-width: 256px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    img {
+        position: absolute;
+        height: auto;
+    }
+
+    img.sparkle {
+        width: 90%;
+        opacity: 0;
+        transition: all .15s ease-in;
+        animation-name: sparkle;
+        animation-duration: .75s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+
+    img.scribble {
+        width: 65%;
+    }
+
+    .container:hover img.sparkle {
+        opacity: 1;
+        width: 100%;
+    }
+
+    @keyframes sparkle {
+        from {
+            width: 100%;
+        }
+        50% {
+            width: 95%;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+
+</style>

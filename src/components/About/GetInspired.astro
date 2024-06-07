@@ -1,0 +1,81 @@
+---
+
+import Polaroid from "../Basics/img/Polaroid.astro";
+
+import DarkFairy from "../../img/articles/dark_fairy_princess.png"
+import CatLady from "../../img/articles/magical_cat_lady.png"
+import PinkDemon from "../../img/articles/pink_demon_princess.png"
+
+
+    const articles = [
+    {
+        title: "How to dress like a Dark Fairy Princess",
+        img: DarkFairy,
+        style: "max-width: 280px; transform: rotate(-4deg)"
+
+    },
+    {
+        title: "Discover your inner Magical Cat Lady",
+        img: CatLady,
+        style: "max-width: 280px; transform: rotate(6deg)"
+      
+    },
+    {
+        title: "Become a Pink Demon Princess",
+        img: PinkDemon,
+        style: "max-width: 280px; transform: rotate(-8deg)"
+    }
+
+]
+
+;
+---
+
+<section class="break_main">
+    <article>
+        <header>
+            <h2 class="heading_2 caps">Get Inspired</h2>
+            <p class="subheading">Delve into our universe and get inspiration on how to style our pieces.</p>
+        </header>
+        <div class="article_container">
+            {articles.map(article =>{
+            return <Polaroid src={article.img} alt={article.title} title={article.title} variant="tall" fixture="pinned" style={article.style} />
+            })}
+        </div>
+    </article>
+</section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns:
+            minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+            minmax(var(--side), 1fr);
+        background: url("/backgrounds/col02.svg");
+        padding: var(--top_btm) var(--side);
+        overflow-x: clip;
+        overflow-clip-margin: var(--side);
+        }
+        
+    article, header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article {
+        grid-column: 2;
+        gap: var(--medium);
+        }
+    
+    header {
+        gap: var(--x-small);
+    }
+
+    .article_container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--medium);
+        justify-content: space-evenly;
+        padding: var(--small);
+    }
+</style>

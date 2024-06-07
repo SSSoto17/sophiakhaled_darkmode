@@ -1,0 +1,57 @@
+---
+
+import Models from "../../img/index/feature.png"
+
+import ItemShowcase from "./Feature/ItemShowcase.astro";
+import ScribbleButton from "../Basics/buttons/ScribbleButton.astro";
+import TapedImage from "../Basics/img/TapedImage.astro";
+
+const {data} = Astro.props
+
+---
+
+<section>
+    <div class="hide">
+        <TapedImage src={Models} alt="Models backstage for a fashion runway" size="max-height: 752px;" />
+    </div>    
+    <ItemShowcase data={data} />
+    <article>
+        <p>Explore Sophia Khaled’s fashion universe between light and darkness, good and evil or dream and reality</p>
+        <ScribbleButton label="Go to Shop" href="/shop" />
+    </article>
+</section>
+
+<style>
+
+    section {
+        display: grid;
+        gap: 5rem var(--small);
+    }
+    
+    section .hide {
+        display: none;
+    }
+
+    article {
+        display: grid;
+        gap: var(--small);
+        justify-items: center;
+        text-align: center;
+    }
+
+    @media (min-width: 630px) {
+        section {
+            grid-template-columns: repeat(2, 1fr);            
+        }
+
+        section .hide {
+            display: block;
+            
+        }
+
+        article {
+            grid-column: 1 / 3;
+        }
+    }
+
+</style>

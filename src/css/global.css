@@ -1,0 +1,200 @@
+@import url(reset.css);
+@import url(variables.css);
+
+* {
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  transition: opacity 0.15s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.cursor {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  body,
+  a:hover,
+  button {
+    cursor: none;
+  }
+
+  .cursor {
+    display: block;
+    --size: 6rem;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("/illustrations/wand_cursor.svg");
+    background-size: 100%;
+    position: absolute;
+    z-index: 1000000;
+    pointer-events: none;
+    transition: scale 0.15s ease-in;
+  }
+
+  .cursor_hover {
+    animation-name: pulse;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+
+  @keyframes pulse {
+    from {
+      scale: 1.1;
+    }
+    50% {
+      scale: 1;
+    }
+    to {
+      scale: 1.1;
+    }
+  }
+}
+
+/* LAYOUT */
+
+main {
+  display: grid;
+  grid-template-columns:
+    minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+    minmax(var(--side), 1fr);
+}
+
+main > * {
+  grid-column: 2;
+}
+
+.break_main {
+  grid-column: 1 / 4;
+}
+
+/*  TEXT STYLES | HEADINGS */
+
+.heading_1,
+.heading_2 {
+  font-weight: 600;
+}
+
+.heading_3,
+.display {
+  font-weight: 700;
+}
+
+.display {
+  font-size: var(--display);
+  line-height: var(--display);
+  text-transform: uppercase;
+}
+
+.heading_1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+}
+
+.heading_2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+}
+
+.heading_3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+}
+
+/* if anything needs to be uppercase, add this class */
+
+.caps {
+  text-transform: uppercase;
+}
+
+/* TEXT STYLES | SUBHEADINGS */
+
+.subheading {
+  font-size: var(--sub-size);
+  font-weight: 400;
+  line-height: var(--sub-line);
+  letter-spacing: 0.05;
+}
+
+.subheading_scribble {
+  font-family: var(--scribble-font);
+  font-size: var(--sub-scribble-size);
+  line-height: var(--sub-scribble-line);
+  letter-spacing: 0.05;
+}
+
+/* TEXT STYLES | BODY */
+
+p {
+  font-size: var(--body-size);
+  font-weight: 400;
+  line-height: var(--body-line);
+  letter-spacing: 0.05;
+}
+
+p:not(:last-of-type) {
+  margin-bottom: var(--body-line);
+}
+
+p.lead {
+  font-size: var(--lead-body-size);
+  font-weight: 600;
+  line-height: var(--lead-body-line);
+}
+
+/* TEXT STYLES | BUTTONS */
+
+p.button {
+  font-size: var(--btn-size);
+  font-weight: 300;
+  line-height: var(--btn-line);
+}
+
+p.button_scribble {
+  font-size: var(--btn-scribble-size);
+  line-height: var(--btn-scribble-line);
+}
+
+/* TEXT STYLES | LABELS */
+
+p.filter,
+p.item,
+p.polaroid {
+  font-family: var(--scribble-font);
+}
+
+p.filter {
+  font-size: var(--filter-label-size);
+  line-height: var(--filter-label-line);
+}
+
+p.item {
+  font-size: var(--item-label-size);
+  line-height: var(--item-label-line);
+}
+
+p.polaroid {
+  font-size: var(--polaroid-label-size);
+  line-height: var(--polaroid-label-line);
+}

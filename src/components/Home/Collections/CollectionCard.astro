@@ -1,0 +1,169 @@
+---
+
+import Photobooth from "../../Basics/img/Photobooth.astro"
+import TapedImage from "../../Basics/img/TapedImage.astro"
+import CollectionCTA from "./CollectionCTA.astro"
+
+const { data } = Astro.props
+
+---
+
+<article class={data.variant}>
+    <div class="container">
+        <img src="/strokes/col01_thread.svg" alt="" class="thread">
+        <div class="img_container">
+            <img src="/strokes/col01_sparkle.svg" alt="" class="sparkle">            
+            <img src="/strokes/col02_scratch.svg" alt="" class="scratch">
+            <TapedImage src={data.hero} alt="Model wearing Sophia Khaled's collection" size="max-width:448px;"/>
+            <div class="photobooth">
+                <Photobooth data={data} />
+            </div>            
+        </div>
+        <CollectionCTA data={data} />
+    </div>    
+</article>
+
+<style define:vars={{ image: `url(${data.bg})`, rotate: `${data.style}` }}>
+    article {
+        display: grid;
+        grid-template-columns:
+        minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+        minmax(var(--side), 1fr);
+        background-image: var(--image);
+        padding: var(--top_btm) var(--none);
+        overflow-x: clip;
+        overflow-clip-margin: var(--side);
+    }
+
+    article > * {
+        grid-column: 2;
+    }
+    .container, .img_container {
+        display: grid;
+        justify-items: center;
+        position: relative;
+    }
+
+    .container {
+        gap: 2rem;
+    }
+
+    .img_container {
+        transform: var(--rotate);
+        padding: var(--none) var(--large);
+    }
+
+    img, .photobooth {
+        display: none;
+        z-index: 50;
+    }
+
+    .col_01 .sparkle, .col_01 .thread {
+        display: block;
+    }
+
+    .col_02 .scratch {
+        display: block;
+    }
+
+    .thread, .scratch {
+        position: absolute;
+    }
+
+    .sparkle {
+            max-width: 75%;
+            animation-name: bling;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+    }
+
+    .thread {
+        top: -3rem;
+        right: -2rem;
+        width: 240px;
+    }
+
+    .scratch {
+        top: -5rem;
+        left: -1.5rem;
+        width: 160px;
+    }
+
+    @keyframes bling {
+        from {
+            transform: rotate(0deg);
+        } 25% {
+            transform: rotate(-2deg);
+        } 50% {
+            transform: rotate(0deg);
+            scale: 1.05;
+        } 75% {
+            transform: rotate(2deg);
+        } to {
+            transform: rotate(0deg);
+            scale: 1;
+        }
+    }
+    @media (min-width: 630px) {
+        .container {
+            grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+            gap: var(--medium)
+        }
+
+        .img_container {
+            padding: var(--none);
+        }
+
+        .photobooth {
+            display: block;
+            position: absolute;
+            width: 112px;
+        }
+
+        article:nth-child(odd) .photobooth {
+        left: 1rem;
+        bottom: -2rem;
+        transform: rotate(-8deg);
+    }
+
+        article:nth-child(even) .photobooth {
+        right: -1rem;
+        top: -4rem;
+        transform: rotate(8deg);
+    }
+
+        .thread {
+            top: -4rem;
+            right: -4rem;
+            width: 400px;
+        }
+
+        .scratch {
+            width: 200px;
+            left: -8rem;
+            top: -6rem;
+        }
+    }
+    @media (min-width: 776px) {
+        article:nth-child(even) .img_container {
+        order: 1;
+    }
+    }
+    @media (min-width: 960px) {
+        .photobooth {
+            width: 136px;
+        }
+
+        article:nth-child(odd) .photobooth {
+        left: -1rem;
+        bottom: -6rem;
+    }
+
+        article:nth-child(even) .photobooth {
+        right: -2rem;
+        top: -8rem;
+    }
+    
+    }
+</style>

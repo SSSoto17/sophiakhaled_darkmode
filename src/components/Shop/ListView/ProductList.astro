@@ -1,0 +1,41 @@
+---
+
+import Filter from "./ProductList/Filter.astro"
+import ProductGrid from "./ProductList/ProductGrid.astro"
+
+---
+
+<div class="container">
+    <aside>
+        <Filter />
+    </aside>
+    <ProductGrid />
+</div>
+
+<style>
+
+    .container {
+        grid-column: 1 / 4;
+    }
+
+    aside {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    @media (min-width: 960px) {
+        .container {
+            grid-column: 2;
+            display: flex;
+            justify-content: space-between;
+            gap: var(--medium);
+        }
+
+        aside {
+            border-right: 1px solid var(--stroke-color);
+            position: relative;
+        }
+    }
+
+</style>

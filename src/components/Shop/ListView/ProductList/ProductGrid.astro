@@ -1,0 +1,72 @@
+---
+
+import Card from "./Card.astro";
+import ArrowButton from "../../../Basics/buttons/ArrowButton.astro";
+
+const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products",{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
+    }
+}).then((res) => res.json());
+
+---
+
+<section>
+    <div class="container">
+        {products.map(item=>{
+            return <Card data={item} page="shop" />          
+        })}
+    </div>    
+    <div class="btn_container">
+        <ArrowButton label="Load more" variant="down" link="" id="btn"/>
+    </div>
+</section>
+
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+        gap: var(--medium);
+        width: 100%;
+        padding: var(--top_btm) var(--side);
+    }
+
+    .btn_container {
+        display: flex;
+        justify-content: center;
+        padding: var(--small);
+    }    
+
+    @media (min-width: 960px) {
+        .container {
+            padding: var(--none);
+        }
+
+    }
+</style>
+
+<script>
+
+    const Cards = document.querySelectorAll(".container a");
+    const arrowButton = document.querySelector(".btn_container button");
+
+    let limit = 12;
+
+    for (let i = 0; i < limit; i++) {
+        Cards[i].classList.remove("hide");
+    } 
+
+    arrowButton.addEventListener("click", () =>{
+        limit +=12;
+        if (limit >= Cards.length) {
+            limit = Cards.length;
+            arrowButton.classList.add("hide");
+        }
+        for (let i = 0; i < limit; i++) {
+        Cards[i].classList.remove("hide");
+    } 
+    })
+
+</script>

@@ -1,0 +1,55 @@
+---
+
+import Hero01 from "../../img/index/col_01.jpg"
+import Hero02 from "../../img/index/col_02.jpg"
+
+import PB01 from "../../img/photobooth/col01_01.jpg"
+import PB02 from "../../img/photobooth/col01_02.jpg"
+import PB03 from "../../img/photobooth/col01_03.jpg"
+import PB04 from "../../img/photobooth/col02_01.jpg"
+import PB05 from "../../img/photobooth/col02_02.jpg"
+import PB06 from "../../img/photobooth/col02_03.jpg"
+
+import CollectionCard from "./Collections/CollectionCard.astro";
+
+const collections = [
+    {
+        no: "01",
+        name: "Middleschool u r dead to me...",
+        img: "/illustrations/ballerina_update.svg",
+        slug: "middleschool-u-r-dead-to-me",
+        bg: "/backgrounds/col01.svg",
+        hero: Hero01,
+        style: "rotate(4deg)",
+        variant: "col_01",
+        photobooth: [PB01, PB02, PB03],
+    },
+    {
+        no: "02",
+        name: "If i dont see the prince, im going to die...",
+        img: "/illustrations/castle_update.svg",
+        slug: "if-i-dont-see-the-prince",
+        bg: "/backgrounds/col02.svg",
+        hero: Hero02,
+        style: "rotate(-4deg)",
+        variant: "col_02",
+        photobooth: [PB04, PB05, PB06]
+    }
+]
+
+---
+
+<section class="break_main">
+        {collections.map((col) =>
+        <CollectionCard data={col} />
+    )}
+</section>
+
+<style>
+
+    section {
+        overflow-x: clip;
+        overflow-clip-margin: var(--side);
+    }
+
+</style>

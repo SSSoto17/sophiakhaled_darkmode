@@ -1,0 +1,43 @@
+---
+const { label, position } = Astro.props;
+---
+
+<div class={position}>
+  <p class="item">{label}</p>
+  <img src="/strokes/item_arrow.svg" alt="">
+  
+</div>
+
+<style>
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--x-small);
+  }
+
+  img {
+    max-height: 2.5rem;
+  }
+
+  .below img, .below_2 img {
+    order: -1;
+    transform: rotate(180deg);
+  }
+
+  p {
+    max-width: 15ch;
+    text-align: center;
+  }
+
+  @media (min-width: 960px) {
+
+    img {
+    max-height: 4rem;
+  }
+    p {
+      max-width: 65ch;
+    }
+  }
+
+</style>

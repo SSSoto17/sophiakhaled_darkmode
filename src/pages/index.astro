@@ -1,0 +1,43 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Hero from "../components/Home/Hero.astro"
+import Feature from "../components/Home/Feature.astro";
+import Collections from "../components/Home/Collections.astro";
+
+import Hero01 from "../img/index/hero_01.JPEG"
+import Hero02 from "../img/index/hero_02.jpeg"
+import Hero03 from "../img/index/hero_03.png"
+
+const feature = 
+		{
+			title: "Sophia Khaled",
+			caption: "Copenhagen based fashion brand",
+			hero: [Hero01, Hero02, Hero03],
+			items: ["2", "12", "26"],
+			class: ["below","side", "below"],
+		}
+
+---
+
+<MainLayout>
+	<Hero data={feature} />
+	<Feature data={feature} />
+	<Collections />
+</MainLayout>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("pop");
+                }
+            })
+        })
+    
+    const Item = document.querySelectorAll("section > article > .item > a, section > article > .item, section > article > .img_container > .hero_img");        
+    
+    Item.forEach(element => {
+        observer.observe(element)
+    })
+    </script>
