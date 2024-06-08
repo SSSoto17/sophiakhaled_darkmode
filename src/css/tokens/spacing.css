@@ -1,0 +1,62 @@
+/* MOBILE */
+
+:root {
+  /* CONTENT */
+  --content-min: 100px;
+  --content-max: 448px;
+
+  /* MARGIN */
+  --none: 0;
+  --side: 1rem;
+  --top_btm: 1.5rem;
+
+  /* GAP */
+  --xx-small: 0.15rem;
+  --x-small: 0.25rem;
+  --small: 0.25rem;
+  --medium: 1rem;
+  --large: 1rem;
+}
+
+/* TABLET */
+
+@media (min-width: 630px) {
+  :root {
+    /* CONTENT */
+    --content-min: 598px;
+    --content-max: 928px;
+
+    /* MARGIN */
+    --side: 1.5rem;
+    --top_btm: 2rem;
+
+    /* GAP */
+    --xx-small: 0.25rem;
+    --x-small: 0.5rem;
+    --small: 0.5rem;
+    --medium: 1.5rem;
+    --large: 2rem;
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: 960px) {
+  :root {
+    /* CONTENT */
+    --content-min: 912px;
+    --content-max: 1120px;
+
+    /* MARGIN */
+    --side: 2rem;
+    --top_btm: 3rem;
+
+    /* GAP */
+
+    --xx-small: 0.25rem;
+    --x-small: 0.5rem;
+    --small: 1rem;
+    --medium: 2rem;
+    --large: 3rem;
+  }
+}

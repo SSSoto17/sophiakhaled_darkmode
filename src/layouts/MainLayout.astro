@@ -1,6 +1,5 @@
 ---
 import "../css/global.css";
-import "../css/global.css";
 
 import Header from "../components/Nav/Header.astro";
 import Footer from "../components/Nav/Footer.astro";
@@ -26,60 +25,7 @@ import Footer from "../components/Nav/Footer.astro";
     <footer>
       <Footer />
     </footer>
-    
-    <script>
-
-      const cursor = document.querySelector(".cursor");
-      const links = Array.from(document.querySelectorAll("a"));
-      const filter = Array.from(document.querySelectorAll(".container.option"));
-      const gallery = Array.from(document.querySelectorAll("ul.gallery li"));
-
-      document.addEventListener("mousemove", e => {
-        cursor.setAttribute("style", "top: "+e.pageY+"px; left: "+e.pageX+"px;");
-      })
-
-      links.forEach(link => {
-        link.addEventListener("mousemove", e => {
-          cursor.classList.add("cursor_hover");
-        })
-
-        link.addEventListener("mouseleave", e => {
-          cursor.classList.remove("cursor_hover");
-        })
-      })
-
-      filter.forEach(option => {
-        option.addEventListener("mousemove", e => {
-          cursor.classList.add("cursor_hover");
-        })
-
-        option.addEventListener("mouseleave", e => {
-          cursor.classList.remove("cursor_hover");
-        })
-      })
-
-      gallery.forEach(image => {
-        image.addEventListener("mousemove", e => {
-          cursor.classList.add("cursor_hover");
-        })
-
-        image.addEventListener("mouseleave", e => {
-          cursor.classList.remove("cursor_hover");
-        })
-      })
-
-
-    </script>
-
+    <script src="../js/cursor.js"></script>
+    <script src="../js/darkmode.js"></script>
   </body>
 </html>
-
-<style>
-
-  header {
-    position: relative;
-    top: 0;
-    z-index: 10000;
-  }
-
-</style>

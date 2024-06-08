@@ -1,0 +1,45 @@
+---
+
+---
+
+<button id="toggle">
+    <div aria-label="Toggle dark mode"></div>
+</button>
+
+<style>
+
+    :root {
+        --light-mode-icon: url("/icons/icon_Fairytale.svg");
+        --dark-mode-icon: url("/icons/icon_Nightmare.svg");
+    }
+
+    button, button > div {
+        border-radius: 100px;
+        border: 1px solid var(--stroke-color);
+        padding: .25rem;
+        transition: all .15s ease-out;
+    }
+
+button {
+    background-color: var(--background-color);
+    width: 4rem;
+    filter: var(--dropshadow);
+}
+
+button > div {
+    width: 1.5rem;
+    aspect-ratio: 1 / 1;
+    background-image: var(--light-mode-icon);
+    background-color: var(--box-color);
+    background-repeat: no-repeat;
+    background-position: 50%;   
+}
+
+/* DARK MODE */
+
+button.dark > div {
+    transform: translateX(125%);
+    background-image: var(--dark-mode-icon);
+}
+
+</style>

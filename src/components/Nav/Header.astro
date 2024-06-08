@@ -1,5 +1,6 @@
 ---
 import BurgerMenu from "./BurgerMenu.astro"
+import DarkModeToggle from "../Basics/buttons/DarkModeToggle.astro"
 
 
 const collections = [
@@ -32,8 +33,8 @@ const collections = [
         <a href="/"><img src="/Logo.svg" alt="" class="logo"></a>
         <ul>
             <li class="caps"><a href="/shop">Shop</a></li>
-            
             <li class="caps basket"><img src="/icons/icon_Bag.svg" alt=""><a href="">Basket</a></li>
+            <li class="caps"><DarkModeToggle/></li>
         </ul>
         
     </article>
@@ -93,7 +94,7 @@ const collections = [
         display: flex;
         align-items: center;
         gap: var(--xx-small);
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         font-weight: 400;
     }
 
