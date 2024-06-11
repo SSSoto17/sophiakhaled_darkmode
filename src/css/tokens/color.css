@@ -77,7 +77,6 @@
   --main-color: var(--raisin-black);
 
   /* EFFECTS */
-  --dropshadow: drop-shadow(-4px 4px 2px var(--raisin-black-15));
   --card: drop-shadow(-8px 8px var(--mantis));
 
   /* ICONS */
