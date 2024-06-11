@@ -1,11 +1,14 @@
 ---
+import DarkModeToggle from "../Basics/buttons/DarkModeToggle.astro";
+
 
 const { data } = Astro.props
 
 ---
 
 <article>
-    <a href="/"><img class="logo" src="/Logo.svg" alt="Logo"></a>
+    <a href="/" class="logo"></a>
+    <!-- <a href="/"><img class="logo" src="/Logo_Fairytale.svg" alt="Logo"></a> -->
     <ul class="icons">
         <li><img src="/icons/icon_Bag.svg" alt="Shopping Basket"></li>
         <li>
@@ -17,6 +20,7 @@ const { data } = Astro.props
         </li>
     </ul>
     <ul class="nav">
+        <!-- <li><DarkModeToggle /></li> -->
         <li class="caps"><a href="/about">About</a></li>
         <li class="caps"><a href="/shop">Shop</a></li>
         <li class="collections caps">
@@ -27,6 +31,7 @@ const { data } = Astro.props
                 })}
             </ul>
         </li>
+        
     </ul>
 </article>  
 
@@ -45,7 +50,13 @@ const { data } = Astro.props
         position: relative;
     }
 
-   
+    a.logo {
+        width: 100%;
+        max-width: 220px;
+        aspect-ratio: 220 / 57;
+        background-image: var(--logo);
+        background-position: 50%;
+    }   
 
     /* BURGER MENU ICON */
 
@@ -62,7 +73,7 @@ const { data } = Astro.props
     .icon > * {
         width: 100%;
         height: 4px;
-        background-color: var(--main-color);
+        background-color: var(--body-color);
         border-radius: 10px;
     }
 
@@ -75,11 +86,11 @@ const { data } = Astro.props
     ul.nav {
         display: none;
         position: absolute;
-        top: 2rem;
+        top: 1.5rem;
         right: -1rem;
         width: 200px;
         padding: var(--side);
-        background-color: var(--box-color);
+        background-color: var(--menu-color);
         filter: var(--dropshadow);
         z-index: 10;
     }

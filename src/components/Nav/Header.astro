@@ -1,7 +1,7 @@
 ---
+
 import BurgerMenu from "./BurgerMenu.astro"
 import DarkModeToggle from "../Basics/buttons/DarkModeToggle.astro"
-
 
 const collections = [
 	{
@@ -30,11 +30,13 @@ const collections = [
                 </ul>
             </li>
         </ul>
-        <a href="/"><img src="/Logo.svg" alt="" class="logo"></a>
+        <a href="/" class="logo"></a>
         <ul>
             <li class="caps"><a href="/shop">Shop</a></li>
-            <li class="caps basket"><img src="/icons/icon_Bag.svg" alt=""><a href="">Basket</a></li>
-            <li class="caps"><DarkModeToggle/></li>
+            <li class="caps basket">
+                <img src="/icons/icon_Bag.svg" alt="">
+                <a href="">Basket</a></li>
+            <li><DarkModeToggle/></li>
         </ul>
         
     </article>
@@ -58,8 +60,11 @@ const collections = [
         display: none;        
     }
 
-    img.logo {
-        width: 220px;   
+    a.logo {
+        width: 220px;
+        aspect-ratio: 220 / 57;
+        background-image: var(--logo);
+        background-position: 50%;
     }
 
     @media (min-width: 960px) {

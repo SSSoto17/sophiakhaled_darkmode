@@ -28,6 +28,7 @@
   /* FILLS */
   --background-color: var(--magnolia);
   --box-color: var(--lavender);
+  --menu-color: var(--lavender);
   --pinboard-a: var(--lavender);
   --pinboard-b: var(--magnolia);
   --filter-bar: var(--lavender);
@@ -47,12 +48,18 @@
   /* EFFECTS */
   --dropshadow: drop-shadow(-4px 4px 2px var(--raisin-black-15));
   --card: drop-shadow(-8px 8px var(--thistle));
+
+  /* ICONS */
+  --logo: url("/Logo_Fairytale.svg");
 }
+
+/* COLOUR | DARK MODE */
 
 [data-theme="dark"] {
   /* FILLS */
   --background-color: var(--raisin-black);
   --box-color: var(--magnolia-10);
+  --menu-color: var(--raisin-black);
   --pinboard-a: var(--cyclamen);
   --pinboard-b: var(--veronica-60);
   --filter-bar: var(--cyclamen);
@@ -72,4 +79,7 @@
   /* EFFECTS */
   --dropshadow: drop-shadow(-4px 4px 2px var(--raisin-black-15));
   --card: drop-shadow(-8px 8px var(--mantis));
+
+  /* ICONS */
+  --logo: url("/Logo_Nightmare.svg");
 }

@@ -1,9 +1,9 @@
 /* IMPORTS */
 
 @import url(reset.css);
-@import url(variables.css);
+@import url(color.css);
 @import url(./tokens/spacing.css);
-@import url(./tokens/text.css);
+@import url(./tokens/textstyles.css);
 
 /* GLOBAL */
 
