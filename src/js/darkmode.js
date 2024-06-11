@@ -10,7 +10,7 @@ const enableDarkMode = () => {
 const disableDarkMode = () => {
   darkModeToggle.classList.remove("dark");
   document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem("darkMode", "disabled");
+  localStorage.setItem("darkMode", null);
 };
 
 darkModeToggle.addEventListener("click", () => {
