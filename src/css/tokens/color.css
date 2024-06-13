@@ -42,6 +42,18 @@
   /* OTHER */
   --stroke-color: var(--thistle);
 
+  /* ICONS */
+  --icon-bag: var(--raisin-black);
+  --icon-instagram: var(--raisin-black);
+  --icon-tiktok: var(--raisin-black);
+
+  /* SCRIBBLES */
+  --primary: var(--cyclamen);
+  --secondary: var(--raisin-black);
+  --tertiary: var(--mantis);
+  --scribble: var(--raisin-black);
+  --sparkle: var(--raisin-black);
+
   /* BASIC */
   --main-color: var(--raisin-black);
 
@@ -72,6 +84,18 @@
 
   /* OTHER */
   --stroke-color: var(--veronica);
+
+  /* ICONS */
+  --icon-bag: var(--mantis);
+  --icon-instagram: var(--cyclamen);
+  --icon-tiktok: var(--mantis);
+
+  /* SCRIBBLES */
+  --primary: var(--mantis);
+  --secondary: var(--thistle);
+  --tertiary: var(--cyclamen);
+  --scribble: var(--cyclamen);
+  --sparkle: var(--thistle);
 
   /* BASIC */
   --main-color: var(--raisin-black);

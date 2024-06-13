@@ -2,6 +2,7 @@
 
 import BurgerMenu from "./BurgerMenu.astro"
 import DarkModeToggle from "../Basics/buttons/DarkModeToggle.astro"
+import Icon from "../Basics/img/Icon.astro"
 
 const collections = [
 	{
@@ -34,8 +35,7 @@ const collections = [
         <ul>
             <li class="caps"><a href="/shop">Shop</a></li>
             <li class="caps basket">
-                <img src="/icons/icon_Bag.svg" alt="">
-                <a href="">Basket</a></li>
+                <Icon variant="bag"/><a href="">Basket</a></li>
             <li><DarkModeToggle/></li>
         </ul>
         
@@ -101,10 +101,6 @@ const collections = [
         gap: var(--xx-small);
         font-size: 1.15rem;
         font-weight: 400;
-    }
-
-    .basket img {
-        height: 2rem;
     }
 
     ul.dropdown {
