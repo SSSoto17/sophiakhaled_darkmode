@@ -7,7 +7,7 @@ const { data, page, text_align } = Astro.props;
 ---
 <a href={`/shop/${data.slug}`} class="hide">
   <article>
-      <Image src={data.image} alt="" inferSize class={page} />
+      <Image src={data.image} alt="" width="300" height="360" class={page} />
     <header class={text_align}>
       <h1 class="heading_3 caps">{data.name}</h1>
       <p>€{data.price}</p>
